@@ -24,6 +24,7 @@ function renderList( list ){
 
 renderList(todo_list);
 
+
 const removeActions = document.querySelectorAll('.item .action.remove');
 for (let i = 0; i < removeActions.length; i++) {
     const removeElement =  removeActions[i];
@@ -33,3 +34,4 @@ function actionRemoveTodoItem( event ){
     const parentItem = event.target.closest('.item')
     parentItem.remove();
 }
+
