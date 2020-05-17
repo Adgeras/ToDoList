@@ -25,6 +25,10 @@ function renderList( list ){
 renderList(todo_list);
 
 
+
+// // ********************************
+//         REMOVE SINGLE TODO ITEM
+// // ************************************/
 const removeActions = document.querySelectorAll('.item .action.remove');
 for (let i = 0; i < removeActions.length; i++) {
     const removeElement =  removeActions[i];
@@ -34,4 +38,18 @@ function actionRemoveTodoItem( event ){
     const parentItem = event.target.closest('.item')
     parentItem.remove();
 }
+// // ********************************
+//     REMOVE ALL TODO ITEM
+// // ************************************/
 
+const BTNremoveAll = document.querySelector('.global-actions > .action.remove');
+BTNremoveAll.addEventListener('click', actionRemoveAllTodoItemS);
+
+function actionRemoveAllTodoItemS (event){
+    const parent = event.target.closest('.container');
+    const allTodoItems = parent.querySelectorAll('.item');
+
+    for (let i = 0; i < allTodoItems.length; i++) {
+        allTodoItems[i].remove();
+    }
+}

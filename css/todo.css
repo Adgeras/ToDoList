@@ -24,6 +24,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
+        "globalActions"
         "form"
         ".";
     width: 100%; 
@@ -32,6 +33,10 @@ body {
     /* row-gap: 15px;
     column-gap: 40px; */
 }
+    .container > .global-actions {
+        display: inline-block;
+        grid-area: globalActions;
+    }
 
     .container > .form {
         display: inline-block;
@@ -88,11 +93,12 @@ body {
                 text-decoration: underline;
                 cursor: pointer;
             }
-
+            
 @media ( min-width: 500px ) {
     .container {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
+        "globalActions globalActions"
         "form form"
         ". .";
         
@@ -102,6 +108,7 @@ body {
     .container {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
+        "globalActions globalActions globalActions"
         "form form form"
         ". . .";
         
@@ -111,6 +118,7 @@ body {
     .container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
+        "globalActions globalActions globalActions globalActions"
         "form form form form"
         ". . . . ";
         
