@@ -53,3 +53,20 @@ function actionRemoveAllTodoItemS (event){
         allTodoItems[i].remove();
     }
 }
+// // ********************************
+//     FORM ACTIONS
+// // ************************************/
+
+const DOMform = document.querySelector('.form');
+const DOMtaskTextArea = DOMform.querySelector('textarea[name="task"]');
+const DOMdeadLineInput = DOMform.querySelector('input[name="deadline"]');
+const DOMformActions = DOMform.querySelector('.actions');
+const DOMformAdd = DOMformActions.querySelector('.btn.add')
+const DOMformClear = DOMformActions.querySelector('.btn.clear');
+
+DOMformClear.addEventListener('click', clearForm);
+
+function clearForm(){
+    DOMtaskTextArea.value = '';
+    DOMdeadLineInput.value = '';
+}
